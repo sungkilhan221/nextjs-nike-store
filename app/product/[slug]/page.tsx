@@ -1,4 +1,5 @@
 import AddToBag from "@/components/AddToBag";
+import CheckoutNow from "@/components/CheckoutNow";
 import ImageGallery from "@/components/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { fullProduct } from "@/lib/interface";
@@ -85,7 +86,15 @@ async function ProductPage({ params }: { params: { slug: string } }) {
                 key={data._id}
                 price_id={data.price_id}
               />
-              <Button variant={"secondary"}>Checkout now</Button>
+              <CheckoutNow
+                currency="USD"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+                price_id={data.price_id}
+              />
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
